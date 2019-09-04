@@ -1,0 +1,15 @@
+#messageViewClose {
+    text-decoration: none;
+    color: #00FFFF;
+    font-weight: 700;
+}
+#messageViewClose:hover {
+    color: black;
+    border-bottom: 2px solid black;
+}
+#viewMessageBox {
+    border: 2px solid #FF6100;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+}

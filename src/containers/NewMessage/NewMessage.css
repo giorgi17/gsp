@@ -1,0 +1,16 @@
+#new-message-form {
+    /* width: 80vw;
+    min-width: 50%;
+    min-height: 50px; */
+    /* background-color: #F9F26B; */
+    margin: 0px auto;
+    margin-top: 20px; 
+    text-align: center;
+    padding: 20px;
+    /* display: block; */
+}
+
+#new-message-submit-button {
+    height: 30px;
+    width: 100px;
+}

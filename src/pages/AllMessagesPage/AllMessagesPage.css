@@ -1,0 +1,10 @@
+.all-messages {
+    /* display: flex; */
+    width: 90%;
+    margin: 0px auto;
+    min-height: 80vh;
+    align-items: center;
+    background-color: aqua;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
