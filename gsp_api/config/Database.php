@@ -1,11 +1,16 @@
 <?php
     class Database {
         // DB Params
-        private $host = 'localhost';
+        private $host = 'gsp.cuvh9b3cjvcv.us-east-2.rds.amazonaws.com';
         private $db_name = 'gsp';
-        private $username = 'root';
-        private $password = '';
+        private $username = 'root_gsp';
+        private $password = 'gsp123gsp';
         private $conn;
+        // private $host = 'localhost';
+        // private $db_name = 'gsp';
+        // private $username = 'root';
+        // private $password = '';
+        // private $conn;
 
         // DB Connect
         public function connect() {

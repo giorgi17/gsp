@@ -1,7 +1,6 @@
 import React from 'react';
 import './NewMessage.css';
 import API from '../../utils/API';
-import {Redirect} from 'react-router';
 
 class NewMessage extends React.Component {
     constructor() {
@@ -11,7 +10,7 @@ class NewMessage extends React.Component {
     state = {
         receiver: '',
         message: '',
-        socialMediaType: ''
+        socialMediaType: 'facebook'
     }
 
     componentDidUpdate(){
@@ -53,13 +52,13 @@ class NewMessage extends React.Component {
         return (
             <form onSubmit={this.handleSubmit} id="new-message-form">
                 <label htmlFor="receiver">Receiver: </label>
-                <input type="text" name="receiver" value={this.state.receiver} onChange={this.handleChange} /><br /><br /><br />
+                <input type="text" name="receiver" value={this.state.receiver} onChange={this.handleChange} placeholder="Add user profile link or username" style={{width: "300px", height: "40px", fontSize: "16px"}} /><br /><br /><br />
 
                 <label htmlFor="message">Message: </label>
                 <textarea name="message" value={this.state.message} onChange={this.handleChange} rows="10" cols="50" /><br /><br /><br />
                
                 <label htmlFor="socialMediaType">Social Media Type: 	&nbsp;&nbsp;&nbsp;</label>
-                <input type="radio" name="socialMediaType" value="facebook" onChange={this.handleChange} /> Facebook &nbsp;&nbsp;
+                <input type="radio" name="socialMediaType" value="facebook" defaultChecked onChange={this.handleChange} /> Facebook &nbsp;&nbsp;
                 <input type="radio" name="socialMediaType" value="instagram" onChange={this.handleChange} /> Instagram <br /><br />
                 <input type="submit" value="Submit" id="new-message-submit-button" />
             </form>
