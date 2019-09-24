@@ -1,6 +1,6 @@
 <?php
 // Headers
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: http://ec2-18-224-139-141.us-east-2.compute.amazonaws.com');
 header('Content-Type: application/json');
 
 include_once '../../config/Database.php';
