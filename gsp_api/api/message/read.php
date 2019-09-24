@@ -1,6 +1,6 @@
 <?php
 // Headers
-header('Access-Control-Allow-Origin: http://ec2-18-224-139-141.us-east-2.compute.amazonaws.com');
+header('Access-Control-Allow-Origin: https://master.d1ubo1y2yglotf.amplifyapp.com');
 header('Content-Type: application/json');
 
 include_once '../../config/Database.php';
