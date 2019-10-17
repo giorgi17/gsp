@@ -20,6 +20,7 @@ class AllMessages extends React.Component {
         //   return;
         // }
 
+        // API.get("/message/read.php?page=" + this.state.page).then(response => {
         API.get("/message/read.php?page=" + this.state.page).then(response => {
             console.log(response);
             if (response.data.data) {
