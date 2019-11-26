@@ -21,11 +21,12 @@ class AllMessages extends React.Component {
         // }
 
         // API.get("/message/read.php?page=" + this.state.page).then(response => {
-        API.get("/messages").then(response => {
+        API.get("/messages/?page=" + this.state.page).then(response => {
             console.log(response);
-            if (response.data.data) {
+            console.log(response.data);
+            if (response.data) {
                 this.setState({
-                    messages: this.state.messages.concat(response.data.data),
+                    messages: this.state.messages.concat(response.data),
                     page: this.state.page + 10
                 });
                 console.log("this is data " + this.state['messages'][0]['message']);
