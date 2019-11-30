@@ -23,16 +23,17 @@ class NewMessage extends React.Component {
     handleSubmit = (event) => {
         console.log("submitted");
         event.preventDefault();
-        const headers = {
-            'Content-Type': 'application/json'
-          }
-            API.post("/message/create.php", {
+            API.post("/messages", {
                     "message": this.state.message,
                     "receiver": this.state.receiver,
                     "social_media_type": this.state.socialMediaType,
                     "viewers": 0
                 },{
-                    headers: headers
+                    headers: {
+                                     'content-type': 'application/json'
+                        //            'Content-Type': 'multipart/form-data'
+                                    // 'Content-Type': 'application/x-www-form-urlencoded'
+                                    }
                 }).then(response => {
                     console.log(response);
                     this.props.history.push('/messages');

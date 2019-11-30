@@ -24,7 +24,7 @@ class AllMessages extends React.Component {
         API.get("/messages/?page=" + this.state.page).then(response => {
             console.log(response);
             console.log(response.data);
-            if (response.data) {
+            if (response.data.length > 0) {
                 this.setState({
                     messages: this.state.messages.concat(response.data),
                     page: this.state.page + 10
@@ -42,16 +42,13 @@ class AllMessages extends React.Component {
         console.log("This is the message - " + message);
         console.log("Message clicked");
         console.log("it's - " + message_id);
-        API.get("/viewer/read_single.php?id="+message_id).then(response => {
+        API.get("/users/check/?messageId="+message_id).then(response => {
             console.log(response);
-            if (response.data.hasOwnProperty("viewers_updated")){
+            if (!response.data){                
                 console.log("true");
-                if (response.data['viewers_updated']) {
-                    console.log("true");
-                    let changedViewers = [...this.state.messages];
-                    changedViewers[arrIndex]['viewers'] = parseInt(changedViewers[arrIndex]['viewers']) + 1;
-                    this.setState({ messages: changedViewers});
-                }
+                let changedViewers = [...this.state.messages];
+                changedViewers[arrIndex]['viewers'] = parseInt(changedViewers[arrIndex]['viewers']) + 1;
+                this.setState({ messages: changedViewers});
             }
           });
     };
@@ -76,14 +73,14 @@ class AllMessages extends React.Component {
                         >
                     
                         {this.state.messages.map((data, index) => (
-                            <Message message_id={data.id}   
+                            <Message message_id={data._id}   
                                     receiver={data.receiver}
                                     social_media_type={data.social_media_type}
                                     viewers={data.viewers}
                                     clickHandler={this.messageViewHandler}
                                     message={data.message}
                                     arrIndex={index}
-                                    key={data.id}></Message>
+                                    key={data._id}></Message>
                         ))}
                 </InfiniteScroll>
         );
